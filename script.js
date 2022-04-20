@@ -1,23 +1,36 @@
-var myArray = [
-    'Rock',
-    'Paper',
-    'Sissors'
-];
+let computerScore = 0;
+let playerScore = 0;
 
 function computerPlay () {
-    myArray[Math.floor(Math.random() * myArray.length)];
+    let myArray = [
+        'Rock',
+        'Paper',
+        'Sissors'
+    ];
+   return myArray[Math.floor(Math.random() * myArray.length)];
 };
 
-function playRound (playerPick,computerPick) {
+function playRound (playerPick) {
+    const computerPick = computerPlay();
+    let result = ""
+
     if ((playerPick === 'Rock' && computerPick === 'Sissors') ||
         (playerPick === 'Sissors' && computerPick === 'Paper') ||
         (playerPick === 'Paper' && computerPick === 'Rock')) {
-        return 'You Win!'
-    } else {
-        return "You Loss"
-    };
-};
+        
+        playerScore += 1
+        result = "You Win!"
 
-const playerPick = 'Rock';
-const computerPick = computerPlay();
-console.log(playRound(playerPick, computerPick));
+        if (playerScore == 5) {
+            result += 'You won the game!'
+        }
+    } else {
+        computerScore += 1
+        result = "You Loss!"
+
+        if (computerScore == 5) {
+            result += 'You Lost the game!'
+        }
+    }
+}
+const playerPick = "Rock";
