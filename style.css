@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    background-color: ivory;
+}
+
+body {
+    width: auto;
+    height: 100vh;
+    margin: 5rem;
+}
+
+header {
+    text-align: center;
+}
+
+.icons {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+#rock, #paper, #sissors {
+    margin-left: 2rem;
+}
+
+#rock:hover {
+    font-size: larger;
+}
+
+#paper:hover {
+    font-size: larger;
+}
+
+#sissors:hover {
+    font-size: larger;
+}
+
+

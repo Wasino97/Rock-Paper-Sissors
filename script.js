@@ -1,16 +1,32 @@
 let computerScore = 0;
 let playerScore = 0;
 
-function computerPlay () {
-    let myArray = [
-        'Rock',
-        'Paper',
-        'Sissors'
-    ];
-   return myArray[Math.floor(Math.random() * myArray.length)];
+function computerPlay() {
+    let myArray = ['Rock','Paper','Sissors'];
+    const randomPick = myArray[Math.floor(Math.random() * myArray.length)];
+    console.log(randomPick);
 };
 
-function playRound (playerPick) {
+function playRound(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) {
+        console.log('tie');
+    } else if (
+        (playerChoice === 'Rock' && computerChoice === 'Sissors') ||
+        (playerChoice === 'Sissors' && computerChoice === 'Paper') ||
+        (playerChoice === 'Paper' && computerChoice === 'Rock')
+    ) {
+        console.log('You win!');
+    } else {
+        console.log('You loss');
+    }
+};
+
+let playerChoice = 'Rock';
+computerChoice = computerPlay();
+
+console.log(playRound(playerChoice, computerChoice));
+
+/* function playRound (playerChoice) {
     const computerPick = computerPlay();
     let result = ""
 
@@ -34,3 +50,4 @@ function playRound (playerPick) {
     }
 }
 const playerPick = "Rock";
+ */
